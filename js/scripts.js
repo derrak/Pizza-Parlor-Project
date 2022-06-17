@@ -10,6 +10,7 @@ function Order() {
 
 Order.prototype.addOrder = function(pizza){
   pizza.id = this.assignId();
+  pizza.price = this.priceCalc();
   this.order[pizza.id] = pizza;
 };
 
@@ -18,17 +19,29 @@ Order.prototype.assignId = function () {
   return this.currentId;
 };
 
+Order.prototype.priceCalc = function() {
+  let price = 0;
+  if (this.size === "small"){
+    price = 10;}
+  else if (this.size === "meduim"){
+    price = 15;}
+  else if (this.size === "large"){
+    price = 20;}
+  console.log("Pizza's base price is:" + price);
+  return price;
+}
+
 // Business Logic for Pizza ---------
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
 };
 
-let orders = new Order();
-let orderedPizza = new Pizza("small","[cheese, peperoni]");
-let orderedPizza2 = new Pizza("large","[cheese, peperoni]");
-orders.addOrder(orderedPizza);
-orders.addOrder(orderedPizza2);
+// let orders = new Order();
+// let orderedPizza = new Pizza("small","[cheese, peperoni]");
+// let orderedPizza2 = new Pizza("large","[cheese, peperoni]");
+// orders.addOrder(orderedPizza);
+// orders.addOrder(orderedPizza2);
 
 
 // User Interface Logic ---------
