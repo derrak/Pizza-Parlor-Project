@@ -35,13 +35,12 @@ orders.addOrder(orderedPizza2);
 let order = new Order();
 
 $(document).ready(function() {
-  $("form#new-contact").submit(function(event) {
+  $("form#pizza-order-form").submit(function(event) {
     event.preventDefault();
-    const inputtedFirstName = $("input#new-first-name").val();
-    const inputtedLastName = $("input#new-last-name").val();
-    const inputtedPhoneNumber = $("input#new-phone-number").val();
-    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
-    addressBook.addContact(newContact);
-    console.log(addressBook.contacts);
+    const inputtedPizzaSize= $("input#sizeRadio:checked").val();
+
+    let newPizza = new Pizza(inputtedPizzaSize,"");
+    order.addOrder(newPizza);
+    console.log(order.pizza);
   });
 });
