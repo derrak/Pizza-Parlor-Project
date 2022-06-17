@@ -8,63 +8,101 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
-  <title>Pig Game</title>
+  <title>Pizza Parlor</title>
 </head>
 <body>
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Pig Dice</h1>
+      <h1>Pizza Parlor</h1>
     </div>
    <div class="container">
-    <div class="row nameEntry">
-      <div class="col-md-6">
-        <hr>
-        <h2>Add Player 1:</h2>
-        <form id="new-contact">
-          <div class="form-group">
-            <label for="playerOneName">First Name</label>
-            <input type="text"  class="form-control" id="playerOneName">
-            <br>
-            <button type="submit" id="nameinput" class="btn btn-primary">Add</button>
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Bild Your Pizza</h2>
+        <form id="pizza-builder">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Pizza Size:</h5>
+              <hr>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="smallRadio" value="small">
+                <label class="form-check-label" for="smallRadio">Small</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="mediumRadio" value="medium">
+                <label class="form-check-label" for="mediumRadio">Medium</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="largeRadio" value="large">
+                <label class="form-check-label" for="largeRadio">Large</label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Toppings:</h5>
+              <hr>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Red Sauce
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Cheese
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Peperoni
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Sausage
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Peppers
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Olives
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Extra Cheese
+                </label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button type="submit" id="roll" class="btn btn-primary">Roll</button>
           </div>
         </div>
-        
-        <div class ="col-md-6">
-          <hr>
-          <h2>Add Player 2:</h2>
-          <label for="playerTwoName">First Name</label>
-          <input type="text"  class="form-control" id="playerTwoName">  
-        </div>
-      </div> 
 
 
-
-      <div class="gamePlay">
-        <div id="playersTurn">
-          <h1>It's <span id="playersTurnName"></span>'s Turn</h1>
-        </div>
-
-        <div>
-          <hr>
-          <p> You rolled a: <span id=rolledNumber></span> !
-          <p> Your current round total is: <span id=currentScore></span> !
-
-          <hr>
-          <button type="submit" id="roll" class="btn btn-primary">Roll</button>
-          <button type="submit" id="hold" class="btn btn-danger">Hold</button>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <h2><span id="player1Name"></span>'s Score: <span id=totalScore1></span></h2>
+        <div class ="col-sm-4">
+          <h2>Current Order:</h2>
+          <div class="card">
+            <div class="card-body">
+              
+            </div>  
           </div>
-          <div class="col-md-6">
-            <h2><span id="player2Name"></span>'s Score: <span id=totalScore2></span></h2>
-          </div>
-        </div>
+        </div> 
       </div>
     </div>
-  </div>
-
+  </div>  
 </body>
 </html>
