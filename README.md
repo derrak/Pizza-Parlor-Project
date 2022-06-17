@@ -32,14 +32,16 @@ Test: "It should return a Pizza object with two properties for toppings and size
 Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
 
+Describe: basePrice()
+Test: "It should return a base price based on size of pizza"
+Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
+      myPizza.basePrice();
+Expected Output: "basePrice: $20"
 
-
-
-
-
-
-
-
+Describe: assignId()
+Test: "It should assign a unique ID to each new pizza object"
+Code: this.id = this.assignId();
+Expected Output: Pizza {id: 1, size: 'large', toppings: Array(2)}
 
 
 
