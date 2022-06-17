@@ -37,9 +37,14 @@ let order = new Order();
 $(document).ready(function() {
   $("form#pizza-order-form").submit(function(event) {
     event.preventDefault();
-    const inputtedPizzaSize= $("input#sizeRadio:checked").val();
-
-    let newPizza = new Pizza(inputtedPizzaSize,"");
+    const inputtedPizzaSize = $("input#sizeRadio:checked").val();
+ 
+    const inputtedToppings = [];
+    $('input[name="toppingsCheck"]:checked').each(function(){
+      inputtedToppings.push($(this).val());
+    });
+    
+    let newPizza = new Pizza(inputtedPizzaSize,inputtedToppings);
     order.addOrder(newPizza);
     console.log(order.pizza);
   });
