@@ -20,22 +20,22 @@
       <div class="row">
         <div class="col-sm-8">
           <h2>Bild Your Pizza</h2>
-          <form id="pizza-builder">
+          <form id="pizza-order-form">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Pizza Size:</h5>
                 <hr>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="smallRadio" value="small">
-                  <label class="form-check-label" for="smallRadio">Small</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sizeRadio" value="Large" checked="checked">
+                  <label class="form-check-label" for="largeRadio">Large</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="mediumRadio" value="medium">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sizeRadio" value="Medium">
                   <label class="form-check-label" for="mediumRadio">Medium</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="largeRadio" value="large" checked="checked">
-                  <label class="form-check-label" for="largeRadio">Large</label>
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sizeRadio" value="Small">
+                  <label class="form-check-label" for="smallRadio">Small</label>
                 </div>
               </div>
             </div>
@@ -44,44 +44,44 @@
                 <h5 class="card-title">Toppings:</h5>
                 <hr>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" value="Red Sauce" id="flexCheckChecked" name="toppingsCheck" checked>
+                  <label class="form-check-label" for="flexCheckDefault" id="RedSauce">
                     Red Sauce
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" value=" Cheese" id="flexCheckChecked" name="toppingsCheck" checked>
+                  <label class="form-check-label" for="flexCheckDefault"id="cheese">
                     Cheese
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                  <label class="form-check-label" for="flexCheckChecked">
+                  <input class="form-check-input" type="checkbox" value=" Peperoni" id="flexCheckChecked" name="toppingsCheck">
+                  <label class="form-check-label" for="flexCheckChecked"id="peperoni">
                     Peperoni
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                  <label class="form-check-label" for="flexCheckChecked">
+                  <input class="form-check-input" type="checkbox" value=" Sausage" id="flexCheckChecked" name="toppingsCheck">
+                  <label class="form-check-label" for="flexCheckChecked" id="sausage">
                     Sausage
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                  <label class="form-check-label" for="flexCheckChecked">
+                  <input class="form-check-input" type="checkbox" value=" Peppers" id="flexCheckChecked" name="toppingsCheck">
+                  <label class="form-check-label" for="flexCheckChecked"id="peppers">
                     Peppers
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                  <label class="form-check-label" for="flexCheckChecked">
+                  <input class="form-check-input" type="checkbox" value=" Olives" id="flexCheckChecked" name="toppingsCheck">
+                  <label class="form-check-label" for="flexCheckChecked"id="olives">
                     Olives
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                  <label class="form-check-label" for="flexCheckChecked">
+                  <input class="form-check-input" type="checkbox" value=" Extra Cheese" id="flexCheckChecked" name="toppingsCheck">
+                  <label class="form-check-label" for="flexCheckChecked"id="extraCheese">
                     Extra Cheese
                   </label>
                 </div>
@@ -93,11 +93,11 @@
           </form>
         </div>
 
-        <div class ="col-sm-4">
+        <div class ="col-sm-4 orderSummary">
           <h2>Current Order:</h2>
           <div class="card">
             <div class="card-body">
-              
+              <ul id="orders"></ul>
             </div>  
           </div>
         </div> 

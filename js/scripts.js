@@ -29,18 +29,17 @@ OrderBook.prototype.assignId = function () { //This new method will increment th
 OrderBook.prototype.priceCalc = function(id) {
   const size = this.orders[id].size;
   const price = 88;
-
-  if (size === "small"){
+  if (size === "Small"){
     return 10;}
-  else if (size === "medium"){
+  else if (size === "Medium"){
     return 15;}
-  else if (size === "large"){
+  else if (size === "Large"){
     return 20;}
 }
 
 OrderBook.prototype.findPizza = function(id) {
-  if (this.order[id] != undefined) {
-    return this.order[id];
+  if (this.orders[id] != undefined) {
+    return this.orders[id];
   }
   return false;
 }
@@ -51,16 +50,18 @@ function Pizza (size,toppings) {
   this.toppings = toppings;
 }
 
-
-// let orders = new Order();
-// let orderedPizza = new Pizza("small","[cheese, peperoni]");
-// let orderedPizza2 = new Pizza("large","[cheese, peperoni]");
-// orders.addPizzaToOrder(orderedPizza);
-// orders.addPizzaToOrder(orderedPizza2);
-
-
 // User Interface Logic ---------
 let orderDatabase = new OrderBook();
+
+function displayOrderDetails(orderToDisplay){
+  let orderListForDisplay = $("ul#orders");
+  let htmlForOrderToDisplay = "";
+  Object.keys(orderToDisplay.orders).forEach (function(key){
+    const order = orderToDisplay.findPizza(key);
+    htmlForOrderToDisplay += "<li id=" + order.id + ">" + order.size + ": " + order.toppings + "<br>" + "$" + order.price + "</li>";
+  });
+  orderListForDisplay.html(htmlForOrderToDisplay);
+}
 
 $(document).ready(function() {
   $("form#pizza-order-form").submit(function(event) {
@@ -72,7 +73,9 @@ $(document).ready(function() {
     });
   
     let newPizza = new Pizza(inputtedPizzaSize,inputtedToppings);
-    console.log("Button clicked: ") + console.log(newPizza);
     orderDatabase.addPizzaToOrder(newPizza);
+ 
+    $(".orderSummary").show();
+    displayOrderDetails(orderDatabase);
   });
 });

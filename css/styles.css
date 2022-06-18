@@ -1,3 +1,7 @@
 .card {
   margin-bottom: .5em;
 }
+
+.orderSummary {
+  display: none;
+}
