@@ -47,6 +47,9 @@ Expected Output: "price: $20"
 * Navigate to the top level of the directory
 * Open index.html in your browser
 
+_You can [view a working version of this project here](https://derrak.github.io/Pizza-Parlor-Project/)._
+
+
 ## Known Bugs
 
 * Clicking the ingredient check box lables check/unchecks the Red Sauce option
